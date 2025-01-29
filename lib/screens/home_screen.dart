@@ -1,4 +1,4 @@
-import 'package:ar_app_flutter/models/ar_objects.dart';
+import 'package:ar_app_flutter/data/cards.dart';
 import 'package:ar_app_flutter/models/shopping_cart_model.dart';
 import 'package:ar_app_flutter/screens/ar_objects_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,56 +11,52 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<ShopCardModel> mycard = [
-    ShopCardModel(Icons.shopping_bag, 'Shoe', false, ARObjects.shoe, false),
-    ShopCardModel(Icons.apartment, 'Chair', false, ARObjects.chair, false),
-    ShopCardModel(Icons.home, 'Chicken', false, ARObjects.chicken, true),
-    ShopCardModel(Icons.grade, 'Figure', false, ARObjects.figure, false),
-    ShopCardModel(Icons.animation, 'Fox', false, ARObjects.fox, false),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff6f7f9),
+      backgroundColor: const Color(0xFFE3E5E9),
       appBar: AppBar(),
       body: Column(
         children: <Widget>[
+          // Title
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(10),
             child: Text(
-              "Let's shopping!",
+              "AR Objects",
               style: TextStyle(fontSize: 24, color: Colors.black54),
             ),
           ),
+          // Cards grid
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10),
               child: GridView.count(
                 crossAxisCount: 2,
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,
-                children: mycard
+                children: cards
                     .map(
-                      (e) => InkWell(
-                        onTap: () => onTap(e),
+                      (card) => InkWell(
+                        onTap: () => onTap(card),
                         child: Card(
-                          color: e.isActive ? Colors.blue : null,
+                          color: card.isActive ? Colors.blueGrey : Colors.white,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Icon(
-                                e.icon,
+                                card.icon,
                                 size: 50,
-                                color: e.isActive ? Colors.white : Colors.blue,
+                                color:
+                                    card.isActive ? Colors.blue : Colors.grey,
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                e.title,
+                                card.title,
                                 style: TextStyle(
-                                    color: e.isActive
-                                        ? Colors.white
-                                        : Colors.grey),
+                                  color: card.isActive
+                                      ? Colors.red
+                                      : Colors.black54,
+                                ),
                               ),
                             ],
                           ),
@@ -76,19 +72,25 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void onTap(ShopCardModel e) {
+  // Handles the tap event on the card
+  void onTap(ShopCardModel card) {
+    // Set the card as active
     setState(() {
-      e.isActive = !e.isActive;
+      card.isActive = !card.isActive;
     });
+    // Navigate to the AR screen
     Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => ARObjectsScreen(
-                  object: e.object,
-                  isLocal: e.isLocal,
-                ))).then((value) {
+      context,
+      MaterialPageRoute(
+        builder: (context) => ARObjectsScreen(
+          object: card.object,
+          isLocal: card.isLocal,
+        ),
+      ),
+    ).then((value) {
+      // Set the card as inActive
       setState(() {
-        e.isActive = !e.isActive;
+        card.isActive = !card.isActive;
       });
     });
   }

@@ -28,6 +28,7 @@ class AAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       automaticallyImplyLeading: false,
+      backgroundColor: Colors.white,
       leadingWidth: 40.0,
       leading: showBackArrow
           ? IconButton(

@@ -15,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE3E5E9),
+      backgroundColor: Color(0xffF5F5F5),
       appBar: AAppBar(
         title: Center(
           child: const Text('AR Objects',
@@ -42,14 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ArObjectsDetailScreen(card: card),
+                          builder: (context) =>
+                              ArObjectsDetailScreen(card: card),
                         ),
                       );
                     },
                     child: ARoundedContainer(
                       width: double.infinity,
                       height: 120,
-                      margin: EdgeInsets.all(8),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -59,8 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               size: Size.fromRadius(40),
                               child: Image.asset(
                                 card.image,
-                                width: 100,
-                                height: 80,
+                                width: 120,
+                                height: 100,
                               ),
                             ),
                           ),
@@ -68,7 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           Text(
                             card.title,
                             style: TextStyle(
-                                color: Colors.black, fontWeight: FontWeight.bold),
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),

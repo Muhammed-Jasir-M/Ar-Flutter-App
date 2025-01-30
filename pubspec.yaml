@@ -65,6 +65,7 @@ flutter:
     - assets/gltf_models/2022_bmw_g82/
     - assets/gltf_models/iphonex/
     - assets/glb_models/
+    - assets/images/
     - assets/triangle.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

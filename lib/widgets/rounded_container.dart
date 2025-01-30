@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class ARoundedContainer extends StatelessWidget {
   const ARoundedContainer({
     super.key,
-    this.height = 300,
+    this.height = 180,
     this.bgColor = Colors.white,
     this.shadowColor = Colors.grey,
-    this.width = 300,
+    this.width = 360,
     this.borderRadius = 15,
     required this.child,
-    this.margin,
+    this.margin = const EdgeInsets.all(8),
     this.padding,
   });
 

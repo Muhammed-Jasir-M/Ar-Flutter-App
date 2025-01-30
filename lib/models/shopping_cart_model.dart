@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 
 class ShopCardModel {
-  final IconData image;
+  final String image;
   final String title;
+  final String description;
   bool isActive = false;
   final String object;
   final bool isLocal;
@@ -10,6 +10,7 @@ class ShopCardModel {
   ShopCardModel(
     this.image,
     this.title,
+    this.description,
     this.isActive,
     this.object,
     this.isLocal,

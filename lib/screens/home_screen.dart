@@ -1,6 +1,7 @@
 import 'package:ar_app_flutter/data/cards.dart';
 import 'package:ar_app_flutter/models/shopping_cart_model.dart';
 import 'package:ar_app_flutter/screens/ar_objects_screen.dart';
+import 'package:ar_app_flutter/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -15,17 +16,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFE3E5E9),
-      appBar: AppBar(),
+      appBar: AAppBar(
+        title: const Text('AR Objects',
+            style: TextStyle(fontSize: 24, color: Colors.black54)),
+      ),
       body: Column(
         children: <Widget>[
-          // Title
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Text(
-              "AR Objects",
-              style: TextStyle(fontSize: 24, color: Colors.black54),
-            ),
-          ),
           // Cards grid
           Expanded(
             child: Padding(
@@ -39,24 +35,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       (card) => InkWell(
                         onTap: () => onTap(card),
                         child: Card(
-                          color: card.isActive ? Colors.blueGrey : Colors.white,
+                          elevation: 4,
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Icon(
-                                card.icon,
-                                size: 50,
-                                color:
-                                    card.isActive ? Colors.blue : Colors.grey,
+                              Image.asset(
+                                card.image as String,
+                                width: 80,
+                                height: 80,
                               ),
                               const SizedBox(height: 10),
                               Text(
                                 card.title,
-                                style: TextStyle(
-                                  color: card.isActive
-                                      ? Colors.red
-                                      : Colors.black54,
-                                ),
+                                style: TextStyle(color: Colors.black54),
                               ),
                             ],
                           ),

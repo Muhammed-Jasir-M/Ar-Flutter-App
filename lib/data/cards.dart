@@ -11,5 +11,4 @@ List<ShopCardModel> cards = [
   ShopCardModel(Icons.sunny, 'Earth', false, ARObjects.earth, true),
   ShopCardModel(Icons.home, 'Spinosaurus', false, ARObjects.spinosaurus, true),
   ShopCardModel(Icons.home, 'Alien', false, ARObjects.alien, true),
-  ShopCardModel(Icons.home, 'Alien', false, ARObjects.alien, true),
 ];

@@ -80,7 +80,9 @@ class _ARObjectsScreenState extends State<ARObjectsScreen> {
       localObjectNode = null;
     } else {
       var newNode = ARNode(
-        type: NodeType.localGLTF2, // Local 3D model format
+        type: widget.object.endsWith('.gltf')
+            ? NodeType.localGLTF2
+            : NodeType.fileSystemAppFolderGLB,
         uri: widget.object, // Path to the local file
         scale: Vector3(0.2, 0.2, 0.2), // Adjusts the size of the model
         position: Vector3(0.0, 0.0, 0.0), // Placing the model at origin

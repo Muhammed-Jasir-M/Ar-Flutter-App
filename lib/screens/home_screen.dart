@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Image.asset(
                                 card.image,
                                 width: double.infinity,
-                                height: 100,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),

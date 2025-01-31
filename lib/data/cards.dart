@@ -8,6 +8,5 @@ List<ShopCardModel> cards = [
   ShopCardModel(AImages.chicken, 'IPhoneex', 'sjkdjlkd',false, ARObjects.iphoneex, true),
   ShopCardModel(AImages.skelton, 'Skelton', 'dlkdjlkjd',false, ARObjects.skelton, true),
   ShopCardModel(AImages.earth, 'Earth', 'dldkkljdlk',false, ARObjects.earth, true),
-  ShopCardModel(AImages.earth, 'Spinosaurus', 'dlkjdlkjkd',false, ARObjects.spinosaurus, true),
   ShopCardModel(AImages.alien, 'Alien', 'dkljlkdjlkjlk',false, ARObjects.alien, true),
 ];

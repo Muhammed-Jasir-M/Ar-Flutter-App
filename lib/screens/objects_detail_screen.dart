@@ -1,4 +1,5 @@
 import 'package:ar_app_flutter/screens/ar_objects_screen.dart';
+import 'package:ar_app_flutter/screens/three_d_objects_screen.dart';
 import 'package:ar_app_flutter/widgets/appbar.dart';
 import 'package:ar_app_flutter/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +7,8 @@ import 'package:flutter/material.dart';
 import '../models/shopping_cart_model.dart';
 import '../widgets/rounded_container.dart';
 
-class ArObjectsDetailScreen extends StatelessWidget {
-  const ArObjectsDetailScreen({super.key, required this.card});
+class ObjectsDetailScreen extends StatelessWidget {
+  const ObjectsDetailScreen({super.key, required this.card});
 
   final ShopCardModel card;
 
@@ -77,7 +78,12 @@ class ArObjectsDetailScreen extends StatelessWidget {
                     bgColor: Color(0xffE0E0E0),
                     icon: Icons.threed_rotation,
                     text: 'View in 3D',
-                    onTap: () {},
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ThreeDObjectsScreen(card: card),
+                      ),
+                    ),
                   ),
                   SizedBox(width: 16),
                   AButtonWidget(
@@ -85,10 +91,15 @@ class ArObjectsDetailScreen extends StatelessWidget {
                     text: 'View in AR',
                     bgColor: Color(0xff9E9E9E),
                     onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ARObjectsScreen(
-                                object: card.object, isLocal: card.isLocal))),
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ARObjectsScreen(
+                          title: card.title,
+                          object: card.object,
+                          isLocal: card.isLocal,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

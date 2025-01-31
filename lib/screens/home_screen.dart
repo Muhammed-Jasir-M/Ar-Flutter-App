@@ -1,5 +1,5 @@
 import 'package:ar_app_flutter/data/cards.dart';
-import 'package:ar_app_flutter/screens/ar_objects_detail_screen.dart';
+import 'package:ar_app_flutter/screens/objects_detail_screen.dart';
 import 'package:ar_app_flutter/widgets/appbar.dart';
 import 'package:ar_app_flutter/widgets/rounded_container.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              ArObjectsDetailScreen(card: card),
+                              ObjectsDetailScreen(card: card),
                         ),
                       );
                     },
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               size: Size.fromRadius(40),
                               child: Image.asset(
                                 card.image,
-                                width: 120,
+                                width: double.infinity,
                                 height: 100,
                               ),
                             ),

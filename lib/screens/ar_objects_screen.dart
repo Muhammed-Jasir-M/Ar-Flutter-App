@@ -1,3 +1,4 @@
+import 'package:ar_flutter_plugin_flutterflow/datatypes/config_planedetection.dart';
 import 'package:ar_flutter_plugin_flutterflow/datatypes/node_types.dart';
 import 'package:ar_flutter_plugin_flutterflow/managers/ar_anchor_manager.dart';
 import 'package:ar_flutter_plugin_flutterflow/managers/ar_location_manager.dart';
@@ -8,14 +9,18 @@ import 'package:ar_flutter_plugin_flutterflow/widgets/ar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart';
 
+import '../widgets/appbar.dart';
+
 /// This displays an AR scene with the ability to load 3D objects.
 class ARObjectsScreen extends StatefulWidget {
   const ARObjectsScreen({
     super.key,
     required this.object,
     required this.isLocal,
+    required this.title,
   });
 
+  final String title;
   final String object; // The path/URL of the 3D model
   final bool isLocal; // Determines whether the object is local or from the web
 
@@ -29,6 +34,7 @@ class _ARObjectsScreenState extends State<ARObjectsScreen> {
 
   ARNode? localObjectNode; // Stores the local 3D model node
   ARNode? webObjectNode; // Stores the web 3D model node
+  ARNode? fileSystemNode; // Stores the file system 3D model node
 
   bool isAdd =
       false; // Tracks whether an object is currently added to the AR scene
@@ -37,8 +43,11 @@ class _ARObjectsScreenState extends State<ARObjectsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xfff6f7f9),
-      appBar: AppBar(),
-      body: ARView(onARViewCreated: onARViewCreated),
+      appBar: AAppBar(title: Text(widget.title), showBackArrow: true),
+      body: ARView(
+        onARViewCreated: onARViewCreated,
+        planeDetectionConfig: PlaneDetectionConfig.horizontalAndVertical,
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: widget.isLocal
             ? onLocalObjectButtonPressed // Loads local model if true

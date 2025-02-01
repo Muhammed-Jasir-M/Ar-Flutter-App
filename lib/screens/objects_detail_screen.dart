@@ -1,9 +1,11 @@
 import 'package:ar_app_flutter/screens/ar_objects_screen.dart';
+import 'package:ar_app_flutter/utils/colors.dart';
 import 'package:ar_app_flutter/widgets/appbar.dart';
 import 'package:ar_app_flutter/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 import '../models/card_model.dart';
+import '../utils/sizes.dart';
 import '../widgets/rounded_container.dart';
 
 class ObjectsDetailScreen extends StatelessWidget {
@@ -14,35 +16,38 @@ class ObjectsDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // App bar
       appBar: AAppBar(showBackArrow: true, title: Text('AR Object Details')),
+      // Body
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(ASizes.defaultSpace),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 10),
+              SizedBox(height: ASizes.spaceBtwItems),
+
+              // Image
               ARoundedContainer(
                 child: Image.asset(
                   card.image,
                   width: double.infinity,
                 ),
               ),
-              SizedBox(height: 4),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  card.title,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w600,
-                  ),
+              SizedBox(height: ASizes.xs),
+              Text(
+                card.title,
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: ASizes.spaceBtwItems),
+
+              // Description
               ARoundedContainer(
-                bgColor: const Color(0xFFEEEEEE),
-                padding: const EdgeInsets.all(8),
+                bgColor: AColors.secondaryVariant,
+                padding: const EdgeInsets.all(ASizes.defaultSpace),
                 height: 250,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,12 +59,13 @@ class ObjectsDetailScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: ASizes.spaceBtwItems),
                     Center(
                       child: Text(
                         card.description,
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 13,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -67,25 +73,21 @@ class ObjectsDetailScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: ASizes.spaceBtwSections),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AButtonWidget(
-                    bgColor: Color(0xffE0E0E0),
-                    icon: Icons.threed_rotation,
-                    text: 'View in 3D',
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AR3DObjectsScreen(card: card),
-                      ),
-                    ),
+              // View in 3D button
+              AButtonWidget(
+                bgColor: AColors.buttonColor,
+                icon: Icons.threed_rotation,
+                text: 'View in 3D',
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AR3DObjectsScreen(card: card),
                   ),
-                ],
+                ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: ASizes.spaceBtwSections),
             ],
           ),
         ),

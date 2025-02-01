@@ -1,4 +1,5 @@
 import 'package:ar_app_flutter/screens/home_screen.dart';
+import 'package:ar_app_flutter/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'AR App',
+      theme: ThemeData(
+        scaffoldBackgroundColor: AColors.secondary,
+        appBarTheme: AppBarTheme(
+          backgroundColor: AColors.primaryVariant,
+        ),
+      ),
       home: MyHomePage(),
     );
   }

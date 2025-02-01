@@ -32,9 +32,9 @@ class ASizes {
   static const double imageThumbSize = 80.0;
 
   // Default spacing between Sections
-  static const double defaultSpace = 16.0;
-  static const double spaceBtwItems = 16.0;
-  static const double spaceBtwSections = 32.0;
+  static const double defaultSpace = 8.0;
+  static const double spaceBtwItems = 8.0;
+  static const double spaceBtwSections = 16.0;
 
   // Border Radius
   static const double borderRadiusSm = 4.0;

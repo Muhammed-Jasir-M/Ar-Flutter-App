@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../utils/helper_functions.dart';
 import '../utils/sizes.dart';
 
 class AAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -23,19 +22,16 @@ class AAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = AHelperFunctions.isDarkMode(context);
-
     return AppBar(
       elevation: 0,
       automaticallyImplyLeading: false,
-      backgroundColor: Colors.white,
       leadingWidth: 40.0,
       leading: showBackArrow
           ? IconButton(
               onPressed: () => Navigator.of(context).pop(),
               icon: Icon(
                 Icons.arrow_circle_left_outlined,
-                color: isDark ? Colors.white : Colors.black,
+                color: Colors.black,
                 size: 30,
               ),
             )

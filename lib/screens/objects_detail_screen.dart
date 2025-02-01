@@ -35,6 +35,8 @@ class ObjectsDetailScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: ASizes.xs),
+
+              // Title
               Text(
                 card.title,
                 style: TextStyle(
@@ -52,6 +54,7 @@ class ObjectsDetailScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Description Text
                     Text(
                       'Description:',
                       style: TextStyle(
@@ -60,6 +63,7 @@ class ObjectsDetailScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: ASizes.spaceBtwItems),
+                    // Description
                     Center(
                       child: Text(
                         card.description,

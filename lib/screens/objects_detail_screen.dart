@@ -23,7 +23,7 @@ class ObjectsDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.all(ASizes.defaultSpace),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: ASizes.spaceBtwItems),
 
@@ -32,6 +32,7 @@ class ObjectsDetailScreen extends StatelessWidget {
                 child: Image.asset(
                   card.image,
                   width: double.infinity,
+                  fit: BoxFit.cover,
                 ),
               ),
               SizedBox(height: ASizes.xs),
@@ -64,14 +65,11 @@ class ObjectsDetailScreen extends StatelessWidget {
                     ),
                     SizedBox(height: ASizes.spaceBtwItems),
                     // Description
-                    Center(
-                      child: Text(
-                        card.description,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                        ),
+                    Text(
+                      card.description,
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],

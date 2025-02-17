@@ -29,4 +29,6 @@ class AImages {
   static const String brain = 'assets/images/human_brain.png';
   static const String eye = 'assets/images/human_eye.jpeg';
   static const String heart = 'assets/images/human_heart.jpeg';
+
+  static const String bed = 'assets/images/bed.webp';
 }

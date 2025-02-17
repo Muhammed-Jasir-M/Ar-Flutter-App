@@ -76,4 +76,7 @@ class ADescriptions {
 
   static const chicken =
       'Domestic fowl (Gallus gallus domesticus) descended from red junglefowl. Have 78 chromosomes (vs human 46) and 1,000+ breeds. Unique avian features include crop (food storage), gizzard (mechanical digestion), and preen gland for feather maintenance. Communicate through 24+ distinct vocalizations.';
+
+  static const bed =
+      'A piece of furniture used for sleeping or resting, typically consisting of a frame, mattress, and bedding. Beds come in various sizes (twin, queen, king) and styles (platform, bunk, canopy). Essential for comfort and support, they play a crucial role in sleep quality and overall health.';
 }

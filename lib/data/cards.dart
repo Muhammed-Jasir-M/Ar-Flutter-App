@@ -4,6 +4,7 @@ import 'package:ar_app_flutter/utils/descriptions.dart';
 import 'package:ar_app_flutter/utils/images.dart';
 
 List<CardModel> cards = [
+  CardModel(image: AImages.bed, title: 'Bed 1', description: ADescriptions.bed, object: ARObjects.bed1),
   CardModel(image: AImages.alien, title: 'Alien', description: ADescriptions.alien, object: ARObjects.alien),
   CardModel(image: AImages.astronaut, title: 'Astronaut', description: ADescriptions.astronaut, object: ARObjects.astronaut),
   CardModel(image: AImages.chicken, title: 'Chicken', description: ADescriptions.chicken, object: ARObjects.chicken),
@@ -30,4 +31,5 @@ List<CardModel> cards = [
   CardModel(image: AImages.brain, title: 'Human Brain', description: ADescriptions.brain, object: ARObjects.brain),
   CardModel(image: AImages.eye, title: 'Human Eye', description: ADescriptions.eye, object: ARObjects.eye),
   CardModel(image: AImages.heart, title: 'Human Heart', description: ADescriptions.heart, object: ARObjects.heart),
+  CardModel(image: AImages.bed, title: 'Bed 2', description: ADescriptions.bed, object: ARObjects.bed2),
 ];

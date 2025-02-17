@@ -5,8 +5,7 @@ class ARObjects {
   static const String animalCell = 'assets/glb_models/animal_cell.glb';
   static const String plantCell = 'assets/glb_models/plant_cell.glb';
 
-  static const String skelton =
-      'assets/glb_models/human_body/human_skeleton.glb';
+  static const String skelton = 'assets/glb_models/human_body/human_skeleton.glb';
   static const String brain = 'assets/glb_models/human_body/human_brain.glb';
   static const String heart = 'assets/glb_models/human_body/human_heart.glb';
   static const String eye = 'assets/glb_models/human_body/human_eye.glb';
@@ -30,4 +29,8 @@ class ARObjects {
   static const String solorSystem = 'assets/glb_models/solar_system/orbiting_solar_system.glb';
 
   static const String volcano = 'assets/glb_models/volcano/volcano.glb';
+
+  static const String bed1 = 'assets/glb_models/bed1.glb';
+  static const String bed2 = 'assets/glb_models/bed2.glb';
 }
+

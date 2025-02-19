@@ -46,10 +46,6 @@ flutter:
   assets:
     - assets/gltf_models/Chicken_01/
     - assets/glb_models/
-    - assets/glb_models/human_body/
-    - assets/glb_models/solar_system/
-    - assets/glb_models/solar_system/planets/
-    - assets/glb_models/volcano/
     - assets/images/
 
 

@@ -28,64 +28,72 @@ class ObjectsDetailScreen extends StatelessWidget {
               SizedBox(height: ASizes.spaceBtwItems),
 
               // Image
-              ARoundedContainer(
-                child: Image.asset(
-                  card.image,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+              Center(
+                child: ARoundedContainer(
+                  child: Image.asset(
+                    card.image,
+                    width: double.infinity,
+                    height: 250,
+                  ),
                 ),
               ),
               SizedBox(height: ASizes.xs),
 
               // Title
-              Text(
-                card.title,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w600,
+              Center(
+                child: Text(
+                  card.title,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               SizedBox(height: ASizes.spaceBtwItems),
 
               // Description
-              ARoundedContainer(
-                bgColor: AColors.secondaryVariant,
-                padding: const EdgeInsets.all(ASizes.defaultSpace),
-                height: 250,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Description Text
-                    Text(
-                      'Description:',
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
+              Center(
+                child: ARoundedContainer(
+                  bgColor: AColors.secondaryVariant,
+                  padding: const EdgeInsets.all(ASizes.defaultSpace),
+                  height: 250,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Description Text
+                      Text(
+                        'Description:',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: ASizes.spaceBtwItems),
-                    // Description
-                    Text(
-                      card.description,
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
+                      SizedBox(height: ASizes.spaceBtwItems),
+                      // Description
+                      Text(
+                        card.description,
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: ASizes.spaceBtwSections),
 
               // View in 3D button
-              AButtonWidget(
-                bgColor: AColors.buttonColor,
-                icon: Icons.threed_rotation,
-                text: 'View in 3D',
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AR3DObjectsScreen(card: card),
+              Center(
+                child: AButtonWidget(
+                  bgColor: AColors.buttonColor,
+                  icon: Icons.threed_rotation,
+                  text: 'View in 3D',
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AR3DObjectsScreen(card: card),
+                    ),
                   ),
                 ),
               ),
